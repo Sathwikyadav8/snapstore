@@ -1,0 +1,5 @@
+src/components/TemplateBuilderEditor.tsx(5,43): error TS2307: Cannot find module '@/types' or its corresponding type declarations.
+src/components/TemplateBuilderEditor.tsx(575,87): error TS7006: Parameter 't' implicitly has an 'any' type.
+src/components/TemplateBuilderEditor.tsx(575,90): error TS7006: Parameter 'idx' implicitly has an 'any' type.
+src/components/TemplateBuilderEditor.tsx(594,78): error TS7006: Parameter 'item' implicitly has an 'any' type.
+src/components/TemplateBuilderEditor.tsx(594,84): error TS7006: Parameter 'idx' implicitly has an 'any' type.

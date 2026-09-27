@@ -1,26 +1,167 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0b0c0e;
+  --foreground: #f5f5f7;
+  --card-bg: #14161b;
+  --card-border: #242832;
+  --primary-accent: #0071e3;
+  --primary-hover: #0077ed;
+  --emerald-accent: #10b981;
+
+  /* Apple & Google Design System Tokens */
+  --color-bg: #0b0c0e;
+  --color-surface: #14161b;
+  --color-surface-hover: #1c1f26;
+  --color-text-primary: #f5f5f7;
+  --color-text-secondary: #a1a1a6;
+  --color-text-muted: #8686b2;
+  --color-accent: #0071e3;
+  --color-accent-hover: #0077ed;
+  --color-border: #242832;
+
+  --ease-apple: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-jakarta), var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+  --font-mono: var(--font-geist-mono), var(--font-space-mono), monospace;
+  --font-display: var(--font-space-grotesk), var(--font-jakarta), sans-serif;
+  --font-serif: var(--font-playfair), Georgia, serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Apple & Google Design Token Helper Classes */
+.apple-section-padding {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+@media (min-width: 768px) {
+  .apple-section-padding {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
   }
 }
 
+.apple-display {
+  font-family: var(--font-space-grotesk), var(--font-jakarta), sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+}
+
+.apple-headline {
+  font-family: var(--font-space-grotesk), var(--font-jakarta), sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.apple-subhead {
+  font-family: var(--font-jakarta), sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+}
+
+.apple-btn-primary {
+  background-color: var(--color-accent);
+  color: #ffffff;
+  border-radius: 9999px;
+  padding: 0.75rem 1.75rem;
+  font-weight: 700;
+  font-size: 0.875rem;
+  transition: all 0.2s var(--ease-apple);
+  box-shadow: 0 10px 25px -5px rgba(0, 113, 227, 0.35);
+}
+
+.apple-btn-primary:hover {
+  background-color: var(--color-accent-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 14px 30px -5px rgba(0, 113, 227, 0.45);
+}
+
+.apple-btn-secondary {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 9999px;
+  padding: 0.75rem 1.75rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  transition: all 0.2s var(--ease-apple);
+}
+
+.apple-btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.apple-glass-nav {
+  background-color: rgba(11, 12, 14, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.font-serif-luxury {
+  font-family: var(--font-playfair), Georgia, serif;
+}
+
+.font-sans-clean {
+  font-family: var(--font-jakarta), var(--font-geist-sans), sans-serif;
+}
+
+.font-display-modern {
+  font-family: var(--font-space-grotesk), var(--font-jakarta), sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #0b0c0e;
+  color: #f1f5f9;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #0b0c0e;
+  color: #f1f5f9;
+  font-family: var(--font-jakarta), var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: #0071e3;
+  color: #ffffff;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #242832 #0b0c0e;
+}
+
+*:focus-visible {
+  outline: 2px solid #0071e3 !important;
+  outline-offset: 2px !important;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0b0c0e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #242832;
+  border-radius: 999px;
+  border: 1.5px solid #0b0c0e;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0071e3;
 }
